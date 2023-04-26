@@ -27,7 +27,9 @@ const getRelPath = function (filePath, cwd) {
 }
 
 const prettifyUrl = ({ url, trailingSlash }) => {
-  const prettyUrl = url.replace(/\/?index\.html$/, '').replace(/\.html$/, '')
+  const prettyUrl = url.replace(/\/?index\.html$/, '')
+    .replace(/\.html$/, '')
+    .replace(/server\/pages\/?/, '')
 
   if (!trailingSlash) {
     return prettyUrl
